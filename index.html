@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beachview Guest House</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href=""><img src="img/Logo1.0.jpg" alt="Beachview" class="logo-img"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="local-area.html">Local Area</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="price-list.html">Price List</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="img/Long shot.avif" alt="Beachview Guest House" class="hero-img">
+        <div class="hero-text">
+            <h1>Welcome to Beachview Guest House</h1>
+            <p>Enjoy luxury accommodation in the beautiful coastal town of Dornoch.</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>Explore Our Gallery</h2>
+        <div class="slideshow">
+            <!-- Lightbox images -->
+            <img src="img/gallery/Double bed room.jpg" alt="Room Image" class="lightbox-img">
+            <img src="img/gallery/hallway_spotlights.webp" alt="Dornoch Seafront" class="lightbox-img">
+            <img src="img/gallery/hotel room with beachfront view.jpg" alt="Dining Area" class="lightbox-img">
+        </div>
+    </section>
+
+    <!-- Embedded YouTube Video Section -->
+    <section class="video-section">
+        <h2>A View of Dornoch</h2>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/90GhHADs1YQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Beachview Guest House | Address: Dornoch, Scotland</p>
+        <p>Phone: +44 123 456 789 | Email: placeholder@beachview.com</p>
+    </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all the images in the gallery that should trigger the lightbox
+        const images = document.querySelectorAll('.lightbox-img');
+        const lightboxOverlay = document.createElement('div');
+        lightboxOverlay.classList.add('lightbox-overlay');
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = '×';
+        closeBtn.classList.add('close-btn');
+        lightboxOverlay.appendChild(closeBtn);
+        const overlayImage = document.createElement('img');
+        lightboxOverlay.appendChild(overlayImage);
+        document.body.appendChild(lightboxOverlay);
+
+        // Open lightbox on image click
+        images.forEach(image => {
+            image.addEventListener('click', function () {
+                const imgSrc = image.getAttribute('src'); // Get the image source
+                overlayImage.src = imgSrc; // Set the large image in the lightbox
+                lightboxOverlay.style.display = 'flex'; // Show the overlay
+            });
+        });
+
+        // Close lightbox when clicking the close button or anywhere outside the image
+        closeBtn.addEventListener('click', function () {
+            lightboxOverlay.style.display = 'none'; // Hide the overlay
+        });
+
+        lightboxOverlay.addEventListener('click', function (e) {
+            if (e.target === lightboxOverlay) {
+                lightboxOverlay.style.display = 'none'; // Hide the overlay when clicking outside the image
+            }
+        });
+    });
+</script>
+</html>

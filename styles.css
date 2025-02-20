@@ -1,0 +1,485 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body and html take up at least the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: fixed; /* Fixes the header to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centers the content vertically */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Logo Image Styles */
+header .logo-img {
+    max-height: 50px;  /* Adjust the height of the logo */
+    max-width: auto;
+    transition: ease-in-out 0.3s;
+}
+
+header .logo-img:hover {
+    scale: 1.08;
+}
+
+/* Logo Text */
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 50vh; /* 50% of the viewport height */
+    padding-top: 42px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 2rem;
+    text-align: center;
+}
+
+.gallery h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.slideshow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Image Styling */
+.lightbox-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    cursor: pointer;
+    margin: 10px;
+    transition: ease-in-out 0.25s;
+}
+
+.lightbox-img:hover {
+    scale: 1.08;
+}
+
+/* Lightbox Functionality */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-overlay img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.lightbox-overlay .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.lightbox-overlay .close-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Price List Page Styles */
+main {
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.price-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.price-list h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding-top: 128px;
+}
+
+.price-list p {
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Contact Form Styles */
+.contact {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding-top: 42px;
+}
+
+.contact form div {
+    margin-bottom: 1rem;
+}
+
+.contact label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact button {
+    padding: 0.8rem 2rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.contact button:hover {
+    background-color: #555;
+}
+
+.contact-info {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+/* Facilities Section */
+.facilities {
+    padding: 2rem;
+    text-align: center;
+}
+
+.facilities h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    padding-top: 42px;
+}
+
+.facility-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.facility-item {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.facility-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.facility-item p {
+    font-size: 1.2rem;
+}
+
+/* Local Area Section */
+.local-area {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 156px;
+}
+
+.local-area h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.local-area p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Attractions Section */
+.attractions {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.attraction {
+    width: 30%;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.attraction:hover {
+    transform: translateY(-5px);
+}
+
+.attraction-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.attraction h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.attraction p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.rooms-title {
+    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Rooms Section */
+.rooms {
+    padding: 2rem;
+    text-align: center;
+}
+
+.rooms h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.room-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.room-item {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.room-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.room-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.room-item p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.room-item .btn {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.room-item .btn:hover {
+    background-color: #555;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    padding-top: 42px;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.values {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.value-item {
+    background-color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+.value-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.value-item p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Video Section Styling */
+.video-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.video-container {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+iframe {
+    width: 100%;
+    max-width: 1000px; /* Optional: limits the width of the video */
+    height: 560px;     /* Keeps a consistent aspect ratio */
+}
+
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}

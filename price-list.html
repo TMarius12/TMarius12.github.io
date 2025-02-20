@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price List | Beachview</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming your CSS is in styles.css -->
+</head>
+<body>
+    <header>
+        <a href=""><img src="img/Logo1.0.jpg" alt="Beachview" class="logo-img"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="local-area.html">Local Area</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li><a href="price-list.html">Price List</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Price List Page Content -->
+    <main>
+        <div class="price-list">
+            <h2>Price List</h2>
+            <p>Below is the pricing for our rooms. You can also download or print the full price list as a PDF.</p>
+
+            <!-- Download PDF Link -->
+            <p><a href="room-prices.pdf" download="room-prices.pdf" target="_blank">Download Price List (PDF)</a></p>
+
+            <!-- Print PDF Button -->
+            <button onclick="printPDF()">Print Price List</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Beachview Guest House | Address: Dornoch, Scotland</p>
+        <p>Phone: +44 123 456 789 | Email: placeholder@beachview.com</p>
+    </footer>
+
+    <!-- Script for Print Function -->
+    <script>
+        function printPDF() {
+            window.print();  // Opens the browser's print dialog
+        }
+    </script>
+
+</body>
+</html>
